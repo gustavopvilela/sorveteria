@@ -1,0 +1,124 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+/* Root */
+:root{
+    --shadow: #0000001f;
+}
+
+/* Tags primitivas */
+body{
+    justify-content: center;
+    align-items: center;
+    font-family: 'RocknRoll One', Arial, sans-serif;
+    background-color: #b474a4;
+    background-image: radial-gradient(
+        #642a56 2px,
+        transparent 2px
+    );
+    background-size: 20px 20px;
+} 
+
+/* Caixas dos links */
+.link{
+    justify-content: center;
+    width: 300px;
+    height: 200px;
+    background: #642a56;
+    position: relative;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--shadow);
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.link img{
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+.conteudo{
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 50px;
+    padding: 0 15px 0 15px;
+    font-size: 14px;
+    background: #ffffff00;
+    backdrop-filter: blur(9px);
+    border-radius: 20px;
+    transform: scale(0.9);
+    color: white;
+    border: 1px solid #ffffff2a;
+    box-shadow: 0 0 20px var(--shadow);
+    overflow: hidden;
+    transition: all .4s;
+}
+
+.conteudo p{
+    justify-content: center;
+    font-size: 1em;
+}
+
+.link:hover .conteudo{
+    justify-content: center;
+    height: 150px;
+}
+
+a{
+    color: #FFFFFF;
+}
+
+/* Barra superior */
+.barraNav{
+    margin-bottom: 30px;
+    background-color: #b474a4;
+    border: 1px solid #642a56;
+    border-color: #642a56;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--shadow);
+    text-align: center;
+}
+
+.barraNav img{
+    width: 25%;
+    height: 25%;
+    display: inline-block;
+    -webkit-filter: drop-shadow(1px 1px 0 #642a56)
+                    drop-shadow(-1px -1px 0 #642a56);
+    filter: drop-shadow(1px 1px 0 #642a56) 
+            drop-shadow(-1px -1px 0 #642a56);
+}
+
+/* Rodapé */
+.rodape{
+    margin-top: 30px;
+    background-color: #b474a4;
+    border: 1px solid #642a56;
+    border-color: #642a56;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--shadow);
+    text-align: center;
+}
+
+.rodape p{
+    color: white;
+    text-align: center;
+    size: 9.5em;
+}
+
+.rodape a{
+    color: #642a56;
+    transition: 0.3s;
+}
+
+.rodape a:hover{
+    color: white;
+}
