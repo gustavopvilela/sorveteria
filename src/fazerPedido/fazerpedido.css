@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 
 /* Tags "primitivas" */
-body{
+/* body{
     background-color: #b474a4;
     background-image: radial-gradient(
         #642a56 2px,
@@ -11,50 +11,10 @@ body{
     );
     background-size: 20px 20px;
     color: white;
-}
-
-p{
-    font-family: 'Yusei Magic', Arial, sans-serif;
-    font-size: 1.25em;
-    font-style: normal;
-    text-align: center;
-    line-height: 50%;
-}
-
-#mostrarNotaFiscal p{
-    font-family: 'Yusei Magic', Arial, sans-serif;
-    font-size: 1.25em;
-    font-style: normal;
-    text-align: center;
-    line-height: 100%;
-}
-
-h1{
-    font-family: 'RocknRoll One', Arial, sans-serif;
-    font-size: 2.3em;
-    text-align: center;
-    text-decoration: underline;
-    margin-bottom: 20px;
-}
-
-h4{
-    font-family: 'Yusei Magic', Arial, sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-}
-
-hr{
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid white;
-    padding: 0;
-    margin: 17px auto;
-    width: 65%;
-}
+} */
 
 /* Barra de navegação */
-.botao{
+/* .botao{
     float: left;
     width: 20%;
 }
@@ -127,87 +87,4 @@ img[alt=logo]{
 
 .barraNav:after {
     clear: both;
-}
-
-/* Textarea */
-#escreverPedido{
-    display: flex;
-    justify-content: center;
-}
-
-textarea{
-    font-family: 'RocknRoll One', Arial, sans-serif;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-/* Botão de fazer pedido */
-#botao{
-    position: relative;
-    text-align: center;
-}
-
-#botaoFazerPedido{
-    background-color: white;
-    font-family: 'Yusei Magic', Arial, sans-serif;
-    font-size: 1.5em;
-    color: #3a1832;
-    border: 2px solid #3a1832;
-    border-radius: 4px;
-    width: 30%;
-    margin-top: 30px;
-    padding: 15px 22.5px;
-    transition-duration: 0.4s;
-    display: inline-block;
-}
-
-#botaoFazerPedido:hover{
-    background-color: #3a1832;
-    color: white;
-}
-
-/* Botões radio */
-.botaoRadio{
-    font-family: 'Yusei Magic', Arial, sans-serif;
-    font-size: 1.2em;
-    font-style: italic;
-    text-align: center;
-    width: 100%;
-}
-
-/* Inputs */
-input[type=text]{
-    font-family: 'Yusei Magic', Arial, sans-serif;
-    font-size: 1em;
-    text-align: center;
-    width: 35%;
-    padding: 10x 0;
-    margin: 6px 0;
-}
-
-/* Botão de finalizar pedido */
-#botaoFinal{
-    position: relative;
-    text-align: center;
-}
-
-#enviarPedido{
-    background-color: white;
-    font-family: 'Yusei Magic', Arial, sans-serif;
-    font-size: 1.5em;
-    color: #3a1832;
-    border: 2px solid #3a1832;
-    border-radius: 4px;
-    width: 30%;
-    margin-top: 30px;
-    padding: 15px 22.5px;
-    transition-duration: 0.4s;
-    display: inline-block;
-}
-
-#enviarPedido:hover{
-    background-color: #3a1832;
-    color: white;
-}
+} */
