@@ -38,6 +38,14 @@
                 }
             }
         }
+
+        $query = "SELECT product FROM produto;";
+        $result_query = mysqli_query($connect, $query) or die('Erro na query: '. $query. ' '. mysqli_error());
+
+        while ($row = mysqli_fetch_array($result_query)){ 
+            print $row["product"]. "<br>"; 
+        }
+
     ?>
 </body>
 </html>
