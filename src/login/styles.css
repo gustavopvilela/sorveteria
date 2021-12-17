@@ -7,100 +7,88 @@
 	font-family: Helvetica;
 	color: #323232;
 	border: none;
-	}
+}
 	
-	body {
-		background-image: "../login/imgs/background.jpg"  ;
-		background-size: cover;
-		background-position-y: -200px; 
-		}
+body {
+	background-image: "../login/imgs/background.jpg"  ;
+	background-size: cover;
+	background-position-y: -200px; 
+}
 		
-		textarea:focus, input:focus{
-			outline: none;
-			}
+textarea:focus, input:focus{
+	outline: none;
+}
 			
-			a {
-				font-size: .8rem;  16 * .8 =x 
-				}
-				
-				a:hover{
-					color: #085588;
-					}
+a{
+	font-size: .8rem; 
+}
 					
-					a:hover {
-						color: #08558B;
-						}
+a:hover {
+	color: #08558B;
+}
 						
-						/*estilo-login*/
+/*estilo-login*/
 						
-						#login-container {
-							background-color: #f3d8e0
-							width: 400px;
-							margin-left: auto;
-							margin-right: auto;
-							padding: 20px 30px;
-							margin-top: 10vh;
-							border-radius: 10px;
-							text-align: center;
-						}
+#login-container {
+	background-color: #f3d8e0;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 30px;
+	margin-top: 10vh;
+	border-radius: 10px;
+	text-align: center;
+}
 						
-						/*form*/
+/* form */
 						
-						form{
-							margin-top: 30px;
-							margin-bottom: 40px;
+form{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
 							
-							}
-							
-							label,input {
-								display: block;
-								width: 100%;
-								text-align: left;
+label,input {
+	display: block;
+	width: 100%;
+	text-align: left;
+}
 								
-								}
-								
-								label {
-									font-weight: bold;
-								
-									}
+label{
+	font-weight: bold;
+}
 						
-						input {
-							border-bottom: 2px solid #323232;
-							padding: 10px;
-							font-size: 1rem;
-							margin-bottom 20px;
-							
-							}
+input {
+	border-bottom: 2px solid #323232;
+	padding: 10px;
+	font-size: 1rem;
+	margin-bottom: 20px;
+}
 						
-						input:focus {
-							border-bottom: 2px solid #08558B;
-							
-							}
+input:focus {
+	border-bottom: 2px solid #08558B;
+}
 					
-					#forgot-pass {
-						text-align: right;
-						display: block;
+#forgot-pass {
+	text-align: right;
+	display: block;
+}
 						
-						}
-						
-						input[type="submit"] {
-							text-align: center;
-							text-transform: uppercase;
-							font-wight: bold;
-							border: none;
-							height: 40px;
-							border-radius: 20px;
-							margin-top: 30px;
-							color: #fff;
-							background-color: #FFCBDB
-							cursor: pointer;
-						
-							}
+input[type="submit"] {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: none;
+	height: 40px;
+	border-radius: 20px;
+	margin-top: 30px;
+	color: #fff;
+	background-color: #FFCBDB;
+	cursor: pointer;
+}
 							
-							input[type= "submit"]: hover {
-								background-color: #FF007F;
-								transition: .3s;
-								
-								}
+input[type= "submit"]:hover {
+	background-color: #FF007F;
+	transition: .3s;
+}
 					
 				
