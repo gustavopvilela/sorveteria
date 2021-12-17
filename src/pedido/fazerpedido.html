@@ -41,26 +41,57 @@
     </div> -->
 
     <!-- Fazer pedido -->
-    <form action="../carrinho/carrinho.php" method="get">
+    <form action="../pedido/carrinho/carrinho.php" method="get">
         <table>
             <thead>
                 <tr>
                     <th>Item</th>
+                    <th>Preço</th>
                     <th>Quantidade</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        <input type="checkbox" name="name" value="" id="sorvete_morango">
+                        <input type="checkbox" name="prod_id[]" id="sorvete_morango" value="Sorvete de morango">
                         <label for="sorvete_morango">Sorvete de Morango</label>
+                        
                     </td>
                     <td>
-                        <input type="number" name="" value="">
+                        <input type="number" readonly="readonly" name="prod_valor[]" value="12">
+                    </td>
+                    <td>
+                        <input type="number" name="prod_qtde[]" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="prod_id[]" id="picole_limao" value="Picolé de limão">
+                        <label for="picole_limao">Picolé de limão</label>
+                    </td>
+                    <td>
+                        <input type="number" readonly="readonly" name="prod_valor[]" value="3">
+                    </td>
+                    <td>
+                        <input type="number" name="prod_qtde[]" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="prod_id[]" id="milk_shake_leite" value="Milkshake de leite">
+                        <label for="milk_shake_leite">Milkshake de leite</label>
+                    </td>
+                    <td>
+                        <input type="number" readonly="readonly" name="prod_valor[]" value="5">
+                    </td>
+                    <td>
+                        <input type="number" name="prod_qtde[]" value="">
                     </td>
                 </tr>
             </tbody>
         </table>
+
+        <input type="submit" name="enviar" value="Fazer pedido e ir para carrinho">
     </form>
 
 </body>

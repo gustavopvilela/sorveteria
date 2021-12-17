@@ -10,7 +10,7 @@
 }
 	
 body {
-	background-image: "../login/imgs/background.jpg"  ;
+	background-image: "../login/imgs/background.jpg";
 	background-size: cover;
 	background-position-y: -200px; 
 }
