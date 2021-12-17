@@ -12,7 +12,7 @@
         mysqli_select_db($connect, $banco) or die("Erro na seleção do banco!");
     
         if(empty($_GET["produto"])){
-            echo "SELECIONA UM CARAI";
+            echo "Nennhum item selecionado";
         }
         else{
             foreach($_GET["produto"] as $produto){

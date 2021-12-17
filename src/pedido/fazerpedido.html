@@ -42,22 +42,16 @@
 
     <!-- Fazer pedido -->
     <form action="../carrinho/carrinho.php" method="get">
-        <input type="checkbox" name="produto[]" id="produto1" value="produto1">
-        <label for="produto1">Sorvete de morango</label><br>
-
-        <input type="checkbox" name="produto[]" id="produto2" value="produto2">
-        <label for="produto2">Picole</label><br>
-
-        <input type="checkbox" name="produto[]" id="produto3" value="produto3">
-        <label for="produto3">Milkshake</label><br>
-
-        <input type="checkbox" name="produto[]" id="produto4" value="produto4">
-        <label for="produto4">paleta mexicana</label><br>
-        
-        <input type="checkbox" name="produto[]" id="produto5" value="produto5">
-        <label for="produto5">casquinha</label><br>
-
-        <input type="submit" value="FAZER O CARAI DO PEDIDO">
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Sorvete</td>
+            </tr>
+        </table>
     </form>
+
 </body>
 </html>
