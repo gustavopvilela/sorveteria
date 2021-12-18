@@ -1,7 +1,6 @@
 <?php
     if(isset($_GET["enviar"])){
         echo "<table><tr>";
-
         
         foreach($_GET["prod_id"] as $id){
             echo "<td>". $id. "</td>";
