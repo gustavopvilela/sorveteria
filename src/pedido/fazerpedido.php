@@ -20,8 +20,11 @@
                 $_SESSION["carrinho"][$contar] = $item_array;
             }
             else{
-                echo '<script>alert("Item já adicionado!");</script>';
-                echo '<script>window.location="fazerpedido.php";</script>';
+                if(in_array($_GET["id"], $item_array_id)){
+                    foreach($_SESSION["carrinho"] as $keys => $values){
+                        $_SESSION["carrinho"][$keys]["item_qtde"] = $_GET["qtde"];
+                    }
+                }
             }
         }
         else{
@@ -119,11 +122,13 @@
                                <?php echo number_format($row["preco"], 2, ",", "."); ?>
                            </h4>
 
-                           <input type="text" name="qtde" value="1">
+                           <input type="number" name="qtde" value="1">
                            
                            <input type="hidden" name="nome_hidden" value="<?php echo $row["nome"]; ?>">
 
                            <input type="hidden" name="preco_hidden" value="<?php echo $row["preco"]; ?>">
+
+                           <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 
                            <input type="submit" style="margin-top: 5px;" value="Adicionar ao carrinho" name="add">
                        </div>
