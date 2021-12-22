@@ -38,7 +38,7 @@
 
     if(isset($_GET["action"])){
         if($_GET["action"] == "delete"){
-            foreach($_SESSION["carrinho"] as $key => $values){
+            foreach($_SESSION["carrinho"] as $keys => $values){
                 if($values["item_id"] == $_GET["id"]){
                     unset($_SESSION["carrinho"][$keys]);
                     
@@ -121,7 +121,7 @@
 
                            <input type="text" name="qtde" value="1">
                            
-                           <input type="hidden" name="nome_hidden" value="<?php echo $row["name"]; ?>">
+                           <input type="hidden" name="nome_hidden" value="<?php echo $row["nome"]; ?>">
 
                            <input type="hidden" name="preco_hidden" value="<?php echo $row["preco"]; ?>">
 
