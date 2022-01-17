@@ -4,7 +4,6 @@
 
 /* Tags "primitivas" */
 
-
 /* Barra de navegação */
 .botao{
     float: left;
@@ -80,3 +79,5 @@ img[alt=logo]{
 .barraNav:after {
     clear: both;
 }
+
+/* Produtos */

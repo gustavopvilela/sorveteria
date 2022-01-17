@@ -23,6 +23,10 @@
                 if(in_array($_GET["id"], $item_array_id)){
                     foreach($_SESSION["carrinho"] as $keys => $values){
                         $_SESSION["carrinho"][$keys]["item_qtde"] = $_GET["qtde"];
+
+                        $update = "UPDATE";
+
+                        $update_exe = mysqli_query($connect, $update);
                     }
                 }
             }
@@ -114,14 +118,19 @@
         ?>
                <div class="col-md-4">
                    <form action="fazerpedido.php?action=add&id=<?php echo $row["id"]; ?>" method="get">
-                       <div style="border: 1px solid black; background-color: #f1f1f1; border-radius: 5px; padding: 16px; margin-bottom: 25px;" align="center">
-                           <!-- <img src="tem um php aq" alt="imagem" class="img-responsive"> -->
+                       <div style="border: 1px solid black;
+                                   background-color: #f1f1f1;
+                                   border-radius: 5px;
+                                   padding: 16px;
+                                   margin-bottom: 25px;
+                                   align: center"
+                            id="produtos">
 
-                           <h4 class="text-info">
+                           <h4 class="text-info" style="text-align: center;">
                                <?php echo $row["nome"]; ?>
                            </h4>
 
-                           <h4 class="text-danger">
+                           <h4 class="text-danger" style="text-align: center;">
                                R$ 
                                <?php echo number_format($row["preco"], 2, ",", "."); ?>
                            </h4>
@@ -134,7 +143,9 @@
 
                            <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 
-                           <input type="submit" style="margin-top: 5px;" value="Adicionar ao carrinho &#127846;" name="add" class="btn btn-success">
+                           <div class="text-center">
+                                <input type="submit" style="margin-top: 5px; align: center;" value="Adicionar ao carrinho &#127846;" name="add" class="btn btn-success">
+                           </div>
                        </div>
                    </form>
                 </div> 
