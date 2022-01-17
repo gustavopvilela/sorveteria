@@ -67,8 +67,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- Links -->
-    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
 
     <title>4everIced: Faça um pedido!</title>
 </head>
@@ -97,8 +100,8 @@
     </div> -->
 
     <!-- Fazer pedido -->
-    <div class="container">
-        <h3>Compras</h3>
+    <div class="container" style="width: 700px;">
+        <h3 align="center">Faça um pedido na 4everIced!</h3>
 
         <?php
             $query = "SELECT * FROM `sorveteria`.`produto` ORDER BY `produto`.`id` ASC;";
@@ -108,21 +111,21 @@
             if(mysqli_num_rows($resultado) > 0){
                 while($row = mysqli_fetch_array($resultado)){
         ?>
-               <div>
-                   <form action="fazerpedido.php?action=add&id=<?php echo $row["id"]; ?>" method="get">
+               <div class="col-md-4">
+                   <form action="fazerpedido.php?action=add&id=<?php echo $row["id"]; ?>" method="get" align="center">
                        <div style="border: 1px solid black; background-color: #f1f1f1; border-radius: 5px;">
-                           <!-- <img src="tem um php aq" alt="imagem"> -->
+                           <!-- <img src="tem um php aq" alt="imagem" class="img-responsive"> -->
 
-                           <h4 class="info">
+                           <h4 class="text-info">
                                <?php echo $row["nome"]; ?>
                            </h4>
 
-                           <h4 class="preco">
+                           <h4 class="text-danger">
                                R$ 
                                <?php echo number_format($row["preco"], 2, ",", "."); ?>
                            </h4>
 
-                           <input type="number" name="qtde" value="1">
+                           <input type="number" name="qtde" class="form-control" value="1">
                            
                            <input type="hidden" name="nome_hidden" value="<?php echo $row["nome"]; ?>">
 
@@ -130,7 +133,7 @@
 
                            <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 
-                           <input type="submit" style="margin-top: 5px;" value="Adicionar ao carrinho" name="add">
+                           <input type="submit" style="margin-top: 5px;" value="Adicionar ao carrinho &#128722;" name="add" class="btn btn-success">
                        </div>
                    </form>
                 </div> 
@@ -143,8 +146,8 @@
         <br>
         <h3>Detalhes do pedido</h3>
 
-        <div class="tabela">
-            <table style="border: 1pxx solid black">
+        <div class="table-responsive">
+            <table style="border: 1pxx solid black" class="table table-bordered">
                 <tr>
                     <th style="width: 40%">Nome do item</th>
                     <th style="width: 10%">Quantidade</th>
