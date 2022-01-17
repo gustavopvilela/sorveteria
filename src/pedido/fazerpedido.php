@@ -7,6 +7,8 @@
         if(isset($_SESSION["carrinho"])){
             $item_array_id = array_column($_SESSION["carrinho"], "item_id");
 
+            
+            
             if(!in_array($_GET["id"], $item_array_id)){
                 $contar = count($_SESSION["carrinho"]);
 
@@ -23,10 +25,6 @@
                 if(in_array($_GET["id"], $item_array_id)){
                     foreach($_SESSION["carrinho"] as $keys => $values){
                         $_SESSION["carrinho"][$keys]["item_qtde"] = $_GET["qtde"];
-
-                        $update = "UPDATE";
-
-                        $update_exe = mysqli_query($connect, $update);
                     }
                 }
             }
@@ -40,6 +38,8 @@
             );
             
             $_SESSION["carrinho"][0] = $item_array;
+
+            
         }
     }
 
