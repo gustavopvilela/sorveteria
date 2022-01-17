@@ -100,7 +100,7 @@
     </div> -->
 
     <!-- Fazer pedido -->
-    <div class="container" style="width: 700px;">
+    <div class="container" style="width: 900px;">
         <h3 align="center">Faça um pedido na 4everIced!</h3>
 
         <?php
@@ -112,8 +112,8 @@
                 while($row = mysqli_fetch_array($resultado)){
         ?>
                <div class="col-md-4">
-                   <form action="fazerpedido.php?action=add&id=<?php echo $row["id"]; ?>" method="get" align="center">
-                       <div style="border: 1px solid black; background-color: #f1f1f1; border-radius: 5px;">
+                   <form action="fazerpedido.php?action=add&id=<?php echo $row["id"]; ?>" method="get">
+                       <div style="border: 1px solid black; background-color: #f1f1f1; border-radius: 5px; padding: 16px; margin-bottom: 25px;" align="center">
                            <!-- <img src="tem um php aq" alt="imagem" class="img-responsive"> -->
 
                            <h4 class="text-info">
@@ -133,7 +133,7 @@
 
                            <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 
-                           <input type="submit" style="margin-top: 5px;" value="Adicionar ao carrinho &#128722;" name="add" class="btn btn-success">
+                           <input type="submit" style="margin-top: 5px;" value="Adicionar ao carrinho &#127846;" name="add" class="btn btn-success">
                        </div>
                    </form>
                 </div> 
@@ -147,7 +147,7 @@
         <h3>Detalhes do pedido</h3>
 
         <div class="table-responsive">
-            <table style="border: 1pxx solid black" class="table table-bordered">
+            <table class="table table-bordered">
                 <tr>
                     <th style="width: 40%">Nome do item</th>
                     <th style="width: 10%">Quantidade</th>
