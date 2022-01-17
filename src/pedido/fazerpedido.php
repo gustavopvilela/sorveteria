@@ -70,6 +70,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="fazerpedido.css">
     
     <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
 
@@ -78,7 +79,7 @@
 
 <body>
     <!-- Barra de navegação -->
-    <!-- <div class="barraNav">
+    <div class="barraNav">
         <div class="logo">
             <img src="../index/imgs/logo.png" alt="logo">
         </div>
@@ -97,7 +98,7 @@
         <div class="botao">
             <a href="../contato/contate-nos.html"><input type="button" value="CONTATE-NOS" class="b-barraNav" id="ultimoBotao"></a>
         </div>
-    </div> -->
+    </div>
 
     <!-- Fazer pedido -->
     <div class="container" style="width: 900px;">
@@ -212,6 +213,21 @@
                 ?>
             </table>
         </div>
+
+        <form action="#" method="get">
+            <div align="right">
+                <input type="submit" style="margin: 5px 0 10px 0;" value="Finalizar pedido" name="finalizar"  class="btn btn-success">
+            </div>
+
+            <?php
+                if(isset($_GET["finalizar"])){
+                    session_destroy();
+
+                    echo '<script>alert("Pedido finalizado! Em até 60 minutos ele estará pronto e entregue!");</script>';
+                    echo '<script>window.location="../index/index.html";</script>';
+                }
+            ?>
+        </form>
     </div>
 </body>
 </html>
