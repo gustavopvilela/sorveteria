@@ -41,7 +41,9 @@
             
             $_SESSION["carrinho"][0] = $item_array;
 
-            
+            $insert = "INSERT INTO `sorveteria`.`produto_venda` (`produto_venda`.`quantidade`, `produto_venda`.`preco`, `produto_venda`.`produto_id`, `produto_venda`.`vendas_id`) VALUES (". $_GET["qtde"]. ", ". $_GET["preco_hidden"] * $_GET["qtde"]. ", ". $_GET["id"].", 1);";
+
+            $insert_query = mysqli_query($connect, $insert);
         }
     }
 
