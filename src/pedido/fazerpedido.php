@@ -7,6 +7,8 @@
         if(isset($_SESSION["carrinho"])){
             $item_array_id = array_column($_SESSION["carrinho"], "item_id");
             
+            
+
             if(!in_array($_GET["id"], $item_array_id)){
                 $contar = count($_SESSION["carrinho"]);
 
@@ -18,15 +20,31 @@
                 );
 
                 $_SESSION["carrinho"][$contar] = $item_array;
+                
+                if(!in_array($_GET["id"], $item_array_id)){
+                    foreach($_SESSION["carrinho"] as $keys => $values){
+                        if($values["item_id"] == $_GET["id"]){
+                             $insert = "INSERT INTO `sorveteria`.`produto_venda` (`produto_venda`.`quantidade`, `produto_venda`.`preco`, `produto_venda`.`produto_id`, `produto_venda`.`vendas_id`) VALUES (". $_GET["qtde"]. ", ". $_GET["preco_hidden"] * $_GET["qtde"]. ", ". $_GET["id"].", 1);";
+        
+                            $insert_query = mysqli_query($connect, $insert); 
+                        }
+                    }
+                }
             }
             else{
                 if(in_array($_GET["id"], $item_array_id)){
                     foreach($_SESSION["carrinho"] as $keys => $values){
-                        $_SESSION["carrinho"][$keys]["item_qtde"] = $_GET["qtde"];
+                        if ($_SESSION["carrinho"][$keys]["item_id"] == $_GET["id"]) {
+                            $_SESSION["carrinho"][$keys]["item_qtde"] = $_GET["qtde"];
 
-                        $update = "UPDATE `sorveteria`.`produto_venda` SET `produto_venda`.`quantidade` = ". $_GET["qtde"]." WHERE `produto_venda`.`produto_id` = ". $_GET["id"].";";
+                            $update = "UPDATE `sorveteria`.`produto_venda` SET `produto_venda`.`quantidade` = ". $_GET["qtde"]." WHERE `produto_venda`.`produto_id` = ". $_GET["id"].";";
 
-                        $update_query = mysqli_query($connect, $update);
+                            $update_query = mysqli_query($connect, $update);
+
+                            $update = "UPDATE `sorveteria`.`produto_venda` SET `produto_venda`.`preco` = ". $_GET["qtde"] * $_GET["preco_hidden"]." WHERE `produto_venda`.`produto_id` = ". $_GET["id"].";";
+
+                            $update_query = mysqli_query($connect, $update);
+                        }
                     }
                 }
             }
@@ -41,9 +59,7 @@
             
             $_SESSION["carrinho"][0] = $item_array;
 
-            $insert = "INSERT INTO `sorveteria`.`produto_venda` (`produto_venda`.`quantidade`, `produto_venda`.`preco`, `produto_venda`.`produto_id`, `produto_venda`.`vendas_id`) VALUES (". $_GET["qtde"]. ", ". $_GET["preco_hidden"] * $_GET["qtde"]. ", ". $_GET["id"].", 1);";
-
-            $insert_query = mysqli_query($connect, $insert);
+            
         }
     }
 
@@ -53,7 +69,7 @@
                 if($values["item_id"] == $_GET["id"]){
                     unset($_SESSION["carrinho"][$keys]);
 
-                    $delete = "DELETE FROM `sorveteria`.`produto_venda` WHERE `produto_venda` = ". $_GET["id"]. ";";
+                    $delete = "DELETE FROM `sorveteria`.`produto_venda` WHERE `produto_venda`.`produto_id` = ". $_GET["id"]. ";";
                     $delete_query = mysqli_query($connect, $delete);
                     
                     echo '<script>alert("Item removido!");</script>';

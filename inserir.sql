@@ -1,3 +1,4 @@
+INSERT INTO `sorveteria`.`produto` (`produto`.`nome`, `produto`.`preco`) VALUES ("Clique p/ desbugar", 0);
 INSERT INTO `sorveteria`.`produto` (`produto`.`nome`, `produto`.`preco`) VALUES ("Casquinha de chocolate", 2.50);
 INSERT INTO `sorveteria`.`produto` (`produto`.`nome`, `produto`.`preco`) VALUES ("Casquinha de baunilha", 2.50);
 INSERT INTO `sorveteria`.`produto` (`produto`.`nome`, `produto`.`preco`) VALUES ("Casquinha mista", 2.50);
