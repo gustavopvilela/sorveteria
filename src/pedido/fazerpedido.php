@@ -6,8 +6,6 @@
     if(isset($_GET["add"])){
         if(isset($_SESSION["carrinho"])){
             $item_array_id = array_column($_SESSION["carrinho"], "item_id");
-
-            
             
             if(!in_array($_GET["id"], $item_array_id)){
                 $contar = count($_SESSION["carrinho"]);
@@ -25,6 +23,10 @@
                 if(in_array($_GET["id"], $item_array_id)){
                     foreach($_SESSION["carrinho"] as $keys => $values){
                         $_SESSION["carrinho"][$keys]["item_qtde"] = $_GET["qtde"];
+
+                        $update = "UPDATE `sorveteria`.`produto_venda` SET `produto_venda`.`quantidade` = ". $_GET["qtde"]." WHERE `produto_venda`.`produto_id` = ". $_GET["id"].";";
+
+                        $update_query = mysqli_query($connect, $update);
                     }
                 }
             }
@@ -48,6 +50,9 @@
             foreach($_SESSION["carrinho"] as $keys => $values){
                 if($values["item_id"] == $_GET["id"]){
                     unset($_SESSION["carrinho"][$keys]);
+
+                    $delete = "DELETE FROM `sorveteria`.`produto_venda` WHERE `produto_venda` = ". $_GET["id"]. ";";
+                    $delete_query = mysqli_query($connect, $delete);
                     
                     echo '<script>alert("Item removido!");</script>';
                     
