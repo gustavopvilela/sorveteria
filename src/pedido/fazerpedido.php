@@ -1,10 +1,13 @@
 <?php
     require_once "../pedido/carrinho/conection.php"; // IMPORTA O ARQUIVO DE CONEXÃO
 
-    $horaPedido = new DateTime("now", new DateTimeZone('America/Sao_Paulo'));
-    $horaPedido -> format('Y-m-d H:i:s');
-    
-    $venda = "INSERT INTO `sorveteria`.`vendas` (`vendas`.`valorTotal`, `vendas`.`dataEHoraVenda`, `dataEHoraEntrega`, `vendas`.`tipoEntrega`, `vendas`.`cliente_id`) VALUES (0, '". $horaPedido. "', '". $horaPedido. "', 1);";
+    $horaPedido = date_default_timezone_set('America/Sao_Paulo');
+    $horaPedido = date('Y-m-d H:i:s', time());
+
+    $horaEntrega = date_default_timezone_set("Etc/GMT+2");
+    $horaEntrega = date('Y-m-d H:i:s', time());
+
+    $venda = "INSERT INTO `sorveteria`.`vendas` (`vendas`.`valorTotal`, `vendas`.`dataEHoraVenda`, `dataEHoraEntrega`, `vendas`.`tipoEntrega`, `vendas`.`cliente_id`) VALUES (0, '". $horaPedido. "', '". $horaEntrega. "', 'Entrega em casa', 1);";
 
     $venda_exe = mysqli_query($connect, $venda);
     
