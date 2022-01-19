@@ -15,5 +15,6 @@
         if(!$connect){
             die('Não conectou! - '. mysql_error());
         }
-        echo 'Conectou!'; */
+        echo 'Conectou!';
+    */
 ?>

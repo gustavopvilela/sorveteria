@@ -1,5 +1,12 @@
 <?php
     require_once "../pedido/carrinho/conection.php"; // IMPORTA O ARQUIVO DE CONEXÃO
+
+    $horaPedido = new DateTime("now", new DateTimeZone('America/Sao_Paulo'));
+    $horaPedido -> format('Y-m-d H:i:s');
+    
+    $venda = "INSERT INTO `sorveteria`.`vendas` (`vendas`.`valorTotal`, `vendas`.`dataEHoraVenda`, `dataEHoraEntrega`, `vendas`.`tipoEntrega`, `vendas`.`cliente_id`) VALUES (0, '". $horaPedido. "', '". $horaPedido. "', 1);";
+
+    $venda_exe = mysqli_query($connect, $venda);
     
     session_start(); // INICIA A SESSÃO
 
@@ -143,7 +150,7 @@
                                    align: center"
                             id="produtos">
 
-                            <img src="<?php echo $row["image"]; // MOSTRA A IMAGEM DO PRODUTO ?>" class="img-responsive" />
+                            <!-- <img src="<?php // echo $row["image"]; // MOSTRA A IMAGEM DO PRODUTO ?>" class="img-responsive" /> -->
                             
                             <br>
 
@@ -262,7 +269,7 @@
                     session_destroy(); // DESTRÓI TODOS OS DADOS ARMAZENADOS NA SESSÃO
 
                     echo '<script>alert("Pedido finalizado! Em até 60 minutos ele estará pronto e entregue!");</script>';
-                    
+
                     echo '<script>window.location="../index/index.html";</script>';
                 }
             ?>
