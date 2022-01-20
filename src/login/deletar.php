@@ -19,9 +19,9 @@
 		<input type="submit" value="Excluir!" name="excluir">
 	</form>
 
-	<a href="">Já tem uma conta? Faça o login!</a>
-	<a href="">Não tem uma conta? Cadastre-se!</a>
-	<a href="">Atualize seu cadastro!</a>
+	<a href="login.php">Já tem uma conta? Faça o login!</a><br>
+	<a href="cadastro.php">Não tem uma conta? Cadastre-se!</a><br>
+	<a href="atualizar.php">Atualize seu cadastro!</a>
 
 	<?php
 		require_once "../pedido/carrinho/conection.php";

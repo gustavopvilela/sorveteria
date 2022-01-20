@@ -10,43 +10,27 @@
 </head>
 <body>
 	<form action="#" method="get">
-		<label for="nome">Nome: </label>
-		<input type="text" name="nome" placeholder="Ex.: João da Silva" id="nome"><br>
-		
 		<label for="email">Email: </label>
 		<input type="email" name="email" placeholder="nome@email.com" id="email"><br>
 		
 		<label for="senha">Senha: </label>
 		<input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha"><br>
-		
-		<label for="rua">Rua: </label>
-		<input type="text" name="rua" placeholder="Rua das Flores, 101" id="rua"><br>
-		
-		<label for="bairro">Bairro: </label>
-		<input type="text" name="bairro" placeholder="Bairro Alfa" id="bairro"><br>
-		
-		<label for="telefone">Telefone: </label>
-		<input type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" id="telefone"><br>
 
 		<input type="submit" value="Logar!" name="logar">
 	</form>
 
-	<a href="">Não tem uma conta? Cadastre-se!</a>
-	<a href="">Atualize seu cadastro!</a>
-	<a href="">Não está satisfeito? Delete sua conta!</a>
+	<a href="cadastro.php">Não tem uma conta? Cadastre-se!</a><br>
+	<a href="atualizar.php">Atualize seu cadastro!</a><br>
+	<a href="deletar.php">Não está satisfeito? Delete sua conta!</a>
 
 	<?php
 		require_once "../pedido/carrinho/conection.php";
 
 		if(isset($_GET["logar"])){
-			$nome = $_GET["nome"];
 			$email = $_GET["email"];
 			$senha = $_GET["senha"];
-			$rua = $_GET["rua"];
-			$bairro = $_GET["bairro"];
-			$telefone = $_GET["telefone"];
 			
-			$query_select = "SELECT * FROM `cliente` WHERE `login` LIKE '$login' AND `senha` LIKE '$senha'";
+			$query_select = "SELECT * FROM `sorveteria`.`cliente` WHERE `cliente`.`email` LIKE '$email' AND `cliente`.`senha` LIKE '$senha'";
 
     		// consulta um usuário já inserido no banco
     		$select = mysqli_query($connect, $query_select);
@@ -60,7 +44,7 @@
 				"<script type='text/javascript'>
 					alert('Login efetuado com sucesso!');
 
-					location.href='formulario.html';
+					location.href='../index/index.html';
 				</script>";
 			}
 			else{
@@ -68,7 +52,7 @@
 				"<script type='text/javascript'>
 					alert('Usuário/senha não cadastrados!');
 
-					location.href='formulario.html';
+					location.href='../index/index.html';
 				</script>";
 			}
 		}

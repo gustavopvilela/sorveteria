@@ -31,9 +31,9 @@
 		<input type="submit" value="Cadastrar!" name="cadastrar">
 	</form>
 
-	<a href="">Já tem uma conta? Faça o login!</a>
-	<a href="">Atualize seu cadastro!</a>
-	<a href="">Não está satisfeito? Delete sua conta!</a>
+	<a href="login.php">Já tem uma conta? Faça o login!</a><br>
+	<a href="atualizar.php">Atualize seu cadastro!</a><br>
+	<a href="deletar.php">Não está satisfeito? Delete sua conta!</a>
 
 	<?php
 		require_once "../pedido/carrinho/conection.php";
