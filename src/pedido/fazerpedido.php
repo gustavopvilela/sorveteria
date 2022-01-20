@@ -157,7 +157,7 @@
                                    align: center"
                             id="produtos">
 
-                            <!-- <img src="<?php // echo $row["image"]; // MOSTRA A IMAGEM DO PRODUTO ?>" class="img-responsive" /> -->
+                            <img src="../pedido/img/<?php echo $row["img"]; // MOSTRA A IMAGEM DO PRODUTO ?>" class="img-responsive" alt="imagem"> 
                             
                             <br>
 
