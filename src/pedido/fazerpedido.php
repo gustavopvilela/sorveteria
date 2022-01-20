@@ -241,6 +241,8 @@
                 <?php
                             $total = $total + ($values["item_qtde"] * $values["item_preco"]);
                             // CALCULA O VALOR TOTAL DA COMPRA, ADICIONANDO A CADA ITEM QUE FOI ADICIONADO AO CARRINHO E, AO MESMO TEMPO, DIMINUI O PREÇO À MEDIDA QUE OS ITENS VÃO SENDO RETIRADOS.
+
+                            $venda_update = "UPDATE `sorveteria`.`vendas` SET `vendas`.`valorTotal` = ". $total. " WHERE `vendas`.`id` = ;" // TERMINAR
                         }
                 ?>
 
