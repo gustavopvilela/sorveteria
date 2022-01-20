@@ -1,5 +1,9 @@
 <?php
     require_once "../pedido/carrinho/conection.php"; // IMPORTA O ARQUIVO DE CONEXÃO
+    
+    /* ob_start();
+    include('../login/login.php');
+    ob_end_clean(); */
 
     $horaPedido = date_default_timezone_set('America/Sao_Paulo');
     $horaPedido = date('Y-m-d H:i:s', time());
@@ -242,7 +246,7 @@
                             $total = $total + ($values["item_qtde"] * $values["item_preco"]);
                             // CALCULA O VALOR TOTAL DA COMPRA, ADICIONANDO A CADA ITEM QUE FOI ADICIONADO AO CARRINHO E, AO MESMO TEMPO, DIMINUI O PREÇO À MEDIDA QUE OS ITENS VÃO SENDO RETIRADOS.
 
-                            $venda_update = "UPDATE `sorveteria`.`vendas` SET `vendas`.`valorTotal` = ". $total. " WHERE `vendas`.`id` = ;" // TERMINAR
+                            $venda_update = "UPDATE `sorveteria`.`vendas` SET `vendas`.`valorTotal` = ". $total. " WHERE `vendas`.`id` = ;"; // TERMINAR
                         }
                 ?>
 
