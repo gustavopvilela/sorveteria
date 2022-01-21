@@ -51,7 +51,7 @@
     </div>
 
 	<?php
-		require_once "../pedido/carrinho/conection.php";
+		require_once "../../connection/connection.php";
 
 		if(isset($_GET["atualizar"])){
             $nome = $_GET["nome"];
@@ -77,7 +77,7 @@
                     $msg = "Não foi possível atualizar o usuário! Alguns motivos podem ser: usuário não cadastrado ou dados inválidos.";
                     
                     echo "<script> alert('". $msg."');
-                    location.href='login.php';
+                    location.href='cadastro.php';
                     </script>";
                 }
                 else {
@@ -92,7 +92,7 @@
                 $msg = "Usuário não encontrado nos registros! Impossível atualizar!";
                     
                 echo "<script> alert('". $msg."');
-                location.href='login.php';
+                location.href='cadastro.php';
                 </script>";
             }
 		}

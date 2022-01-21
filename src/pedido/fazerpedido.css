@@ -3,6 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 
 /* Tags "primitivas" */
+body{
+    font-family: 'RocknRoll One', Arial, sans-serif;
+    background-color: #b474a4;
+    background-image: radial-gradient(
+        #642a56 2px,
+        transparent 2px
+    );
+    background-size: 20px 20px;
+    color: white;
+}
 
 /* Barra de navegação */
 .botao{
@@ -79,5 +89,3 @@ img[alt=logo]{
 .barraNav:after {
     clear: both;
 }
-
-/* Produtos */

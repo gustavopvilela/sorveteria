@@ -48,7 +48,7 @@
 		</fieldset>
 	</div>
 	<?php
-		require_once "../pedido/carrinho/conection.php";
+		require_once "../../connection/connection.php";
 
 		if(isset($_GET["cadastrar"])){
             
@@ -67,7 +67,7 @@
                 $msg = "Não foi possível cadastrar o usuário!";
                 
                 echo "<script> alert('". $msg."');
-                location.href='login.php';
+                location.href='cadastro.php';
                 </script>";
             }
             

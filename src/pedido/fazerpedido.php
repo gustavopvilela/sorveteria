@@ -1,5 +1,5 @@
 <?php
-    require_once "../pedido/carrinho/conection.php"; // IMPORTA O ARQUIVO DE CONEXÃO
+    require_once "../../connection/connection.php"; // IMPORTA O ARQUIVO DE CONEXÃO
     
     session_start(); // INICIA A SESSÃO
 
@@ -8,7 +8,7 @@
             <label for='id_user'>Digite seu usuário para a venda (só é necessário digitar UMA vez): </label>
             <input type='number' name='id_user' id='id_user'>
 
-            <input type='submit' name='enviar_id' value='Enviar ID'>
+            <input type='submit' name='enviar_id' value='Enviar ID' class='btn btn-success'>
         </form>";
     
     if (isset($_GET["enviar_id"])) {
@@ -170,7 +170,7 @@
                                    align: center"
                             id="produtos">
 
-                            <img src="../pedido/img/<?php echo $row["img"]; // MOSTRA A IMAGEM DO PRODUTO ?>" class="img-responsive" alt="imagem"> 
+                            <img src="../pedido/imgs/<?php echo $row["img"]; // MOSTRA A IMAGEM DO PRODUTO ?>" class="img-responsive" alt="imagem"> 
                             
                             <br>
 

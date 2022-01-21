@@ -34,7 +34,7 @@
     </div>
 
 	<?php
-		require_once "../pedido/carrinho/conection.php";
+		require_once "../../connection/connection.php";
 
 		if(isset($_GET["excluir"])){
             $email_cadastro = $_GET["email"];
@@ -44,17 +44,9 @@
 
             $select = mysqli_query($connect, $query_select);
 
-            /* $cliente_id = "SELECT `vendas`.`cliente_id` FROM `sorveteria`.`vendas` WHERE `vendas`.`cliente_id` = (SELECT `cleinte`.`id` FROM `sorveteria`.`cliente` WHERE `cliente`.`email` LIKE '$email_cadastro' AND `cliente`.`senha` = '$senha');";
-
-            $cliente_id_exe = mysqli_query($connect, $cliente_id); */
-
             $row = mysqli_num_rows($select);
 			
             if($row == 1){
-                /* $deletar_vendas = "DELETE FROM `sorveteria`.`vendas` WHERE `vendas`.`cliente_id` = ". $cliente_id_exe.";";
-
-                $deletar_vendas_exe = mysqli_query($connect, $deletar_vendas); */
-                
                 $deletar = "DELETE FROM `sorveteria`.`cliente` WHERE `cliente`.`email` = '". $email_cadastro. "';";
     		
                 $deletar_exe = mysqli_query($connect, $deletar);
@@ -63,7 +55,7 @@
                     $msg = "Não foi possível deletar o usuário!";
                     
                     echo "<script> alert('". $msg.", ". mysqli_error($connect)."');
-                    location.href='login.php';
+                    location.href='deletar.php';
                     </script>";
 
                     echo mysqli_error($connect);
@@ -72,7 +64,7 @@
                     $msg = "Usuário deletado com sucesso!";
                     
                     echo "<script> alert('". $msg."');
-                    location.href='login.php';
+                    location.href='cadastro.php';
                     </script>";
                 }
             }
@@ -80,7 +72,7 @@
                 $msg = "Usuário não encontrado nos registros! Impossível deletar!";
                     
                 echo "<script> alert('". $msg."');
-                location.href='login.php';
+                location.href='cadastro.php';
                 </script>";
             }
 		}

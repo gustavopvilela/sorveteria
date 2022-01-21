@@ -13,7 +13,7 @@
 <body>
 	<div class="container">
 		<fieldset>
-			<legend>Insira suas informações para a deleção!</legend>
+			<legend>Insira suas informações para logar!</legend>
 
 			<form action="#" method="get">
 				<label for="email">Email: </label>
@@ -34,7 +34,7 @@
     </div>
 
 	<?php
-		require_once "../pedido/carrinho/conection.php";
+		require_once "../../connection/connection.php";
 
 		if(isset($_GET["logar"])){
 			$email = $_GET["email"];
@@ -62,7 +62,7 @@
 				"<script type='text/javascript'>
 					alert('Usuário/senha não cadastrados!');
 
-					location.href='login.php';
+					location.href='cadastro.php';
 				</script>";
 			}
 		}
