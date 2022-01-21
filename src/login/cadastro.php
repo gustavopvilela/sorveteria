@@ -61,8 +61,14 @@
             
             else {
                 $msg = "Usuário cadastrado com sucesso!";
+
+				$id = "SELECT `cliente`.`id` FROM `sorveteria`.`cliente` WHERE `cliente`.`email` = '". $email. "';";
+
+				$id_exe = mysqli_query($connect, $id);
+
+				$row = mysqli_fetch_row($id_exe);
                 
-                echo "<script> alert('". $msg."');
+                echo "<script> alert('". $msg." Seu id de cliente é ". $row[0].", não esqueça!');
                 location.href='login.php';
                 </script>";
             }

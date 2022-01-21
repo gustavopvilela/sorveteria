@@ -1,9 +1,7 @@
 <?php
     require_once "../pedido/carrinho/conection.php"; // IMPORTA O ARQUIVO DE CONEXÃO
     
-    /* ob_start();
-    include('../login/login.php');
-    ob_end_clean(); */
+    session_start(); // INICIA A SESSÃO
 
     $horaPedido = date_default_timezone_set('America/Sao_Paulo');
     $horaPedido = date('Y-m-d H:i:s', time());
@@ -14,8 +12,6 @@
     $venda = "INSERT INTO `sorveteria`.`vendas` (`vendas`.`valorTotal`, `vendas`.`dataEHoraVenda`, `dataEHoraEntrega`, `vendas`.`tipoEntrega`, `vendas`.`cliente_id`) VALUES (0, '". $horaPedido. "', '". $horaEntrega. "', 'Entrega em casa', 1);";
 
     $venda_exe = mysqli_query($connect, $venda);
-    
-    session_start(); // INICIA A SESSÃO
 
     if(isset($_GET["add"])){ // SE O BOTÃO DE ADICIONAR AO CARINHO ESTIVER ATIVADO, FARÁ
         if(isset($_SESSION["carrinho"])){ // SE A SESSÃO TIVER DADOS NELA, FARÁ
