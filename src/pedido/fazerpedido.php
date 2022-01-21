@@ -28,8 +28,6 @@
 
         $id_venda_exe = mysqli_query($connect, $id_venda);
 
-        $row_vendas = mysqli_fetch_row($id_venda_exe);
-
     }
 
     if(isset($_GET["add"])){ // SE O BOTÃO DE ADICIONAR AO CARINHO ESTIVER ATIVADO, FARÁ
@@ -50,7 +48,7 @@
                 
                 foreach($_SESSION["carrinho"] as $keys => $values){
                     if($values["item_id"] == $_GET["id"]){
-                            $insert = "INSERT INTO `sorveteria`.`produto_venda` (`produto_venda`.`quantidade`, `produto_venda`.`preco`, `produto_venda`.`produto_id`, `produto_venda`.`vendas_id`) VALUES (". $_GET["qtde"]. ", ". $_GET["preco_hidden"] * $_GET["qtde"]. ", ". $_GET["id"].", 1);";
+                            $insert = "INSERT INTO `sorveteria`.`produto_venda` (`produto_venda`.`quantidade`, `produto_venda`.`preco`, `produto_venda`.`produto_id`, `produto_venda`.`vendas_id`) VALUES (". $_GET["qtde"]. ", ". $_GET["preco_hidden"] * $_GET["qtde"]. ", ". $_GET["id"].", ". $id_venda_exe.");";
     
                         $insert_query = mysqli_query($connect, $insert); 
                     }
@@ -260,8 +258,14 @@
                 <?php
                             $total = $total + ($values["item_qtde"] * $values["item_preco"]);
                             // CALCULA O VALOR TOTAL DA COMPRA, ADICIONANDO A CADA ITEM QUE FOI ADICIONADO AO CARRINHO E, AO MESMO TEMPO, DIMINUI O PREÇO À MEDIDA QUE OS ITENS VÃO SENDO RETIRADOS.
+                            
+                            if (isset($horaPedido)) {
+                                $venda_update = "UPDATE `sorveteria`.`vendas` SET `vendas`.`valorTotal` = ". $total. " WHERE `vendas`.`dataEHoraVenda` = '". $horaPedido. "';";
 
-                            $venda_update = "UPDATE `sorveteria`.`vendas` SET `vendas`.`valorTotal` = ". $total. " WHERE `vendas`.`id` = ". $row_vendas[0].";"; // TERMINAR
+                                $vendas_update_exe = mysqli_query($connect, $venda_update);
+                            }
+                            
+                            
                         }
                 ?>
 
