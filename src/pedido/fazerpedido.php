@@ -3,15 +3,34 @@
     
     session_start(); // INICIA A SESSÃO
 
-    $horaPedido = date_default_timezone_set('America/Sao_Paulo');
-    $horaPedido = date('Y-m-d H:i:s', time());
+    echo "
+        <form action='#' method='get'>
+            <label for='id_user'>Digite seu usuário para a venda (só é necessário digitar UMA vez): </label>
+            <input type='number' name='id_user' id='id_user'>
 
-    $horaEntrega = date_default_timezone_set("Etc/GMT+2");
-    $horaEntrega = date('Y-m-d H:i:s', time());
+            <input type='submit' name='enviar_id' value='Enviar ID'>
+        </form>";
+    
+    if (isset($_GET["enviar_id"])) {
+        $id_user = $_GET["id_user"];
+    
+        $horaPedido = date_default_timezone_set('America/Sao_Paulo');
+        $horaPedido = date('Y-m-d H:i:s', time());
 
-    $venda = "INSERT INTO `sorveteria`.`vendas` (`vendas`.`valorTotal`, `vendas`.`dataEHoraVenda`, `dataEHoraEntrega`, `vendas`.`tipoEntrega`, `vendas`.`cliente_id`) VALUES (0, '". $horaPedido. "', '". $horaEntrega. "', 'Entrega em casa', 1);";
+        $horaEntrega = date_default_timezone_set("Etc/GMT+2");
+        $horaEntrega = date('Y-m-d H:i:s', time());
 
-    $venda_exe = mysqli_query($connect, $venda);
+        $venda = "INSERT INTO `sorveteria`.`vendas` (`vendas`.`valorTotal`, `vendas`.`dataEHoraVenda`, `dataEHoraEntrega`, `vendas`.`tipoEntrega`, `vendas`.`cliente_id`) VALUES (0, '". $horaPedido. "', '". $horaEntrega. "', 'Entrega em casa', ". $id_user.");";
+
+        $venda_exe = mysqli_query($connect, $venda);
+
+        $id_venda = "SELECT `vendas`.`id` FROM `sorveteria`.`vendas` WHERE `vendas`.`dataEHoraVenda` = '". $horaPedido. "';";
+
+        $id_venda_exe = mysqli_query($connect, $id_venda);
+
+        $row_vendas = mysqli_fetch_row($id_venda_exe);
+
+    }
 
     if(isset($_GET["add"])){ // SE O BOTÃO DE ADICIONAR AO CARINHO ESTIVER ATIVADO, FARÁ
         if(isset($_SESSION["carrinho"])){ // SE A SESSÃO TIVER DADOS NELA, FARÁ
@@ -242,7 +261,7 @@
                             $total = $total + ($values["item_qtde"] * $values["item_preco"]);
                             // CALCULA O VALOR TOTAL DA COMPRA, ADICIONANDO A CADA ITEM QUE FOI ADICIONADO AO CARRINHO E, AO MESMO TEMPO, DIMINUI O PREÇO À MEDIDA QUE OS ITENS VÃO SENDO RETIRADOS.
 
-                            $venda_update = "UPDATE `sorveteria`.`vendas` SET `vendas`.`valorTotal` = ". $total. " WHERE `vendas`.`id` = ;"; // TERMINAR
+                            $venda_update = "UPDATE `sorveteria`.`vendas` SET `vendas`.`valorTotal` = ". $total. " WHERE `vendas`.`id` = ". $row_vendas[0].";"; // TERMINAR
                         }
                 ?>
 
