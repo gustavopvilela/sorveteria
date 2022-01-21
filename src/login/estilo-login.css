@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@100;200;300;400;500;600;700&display=swap);
 
 body {
+    
     min-height:95vh;
     display:flex;
     justify-content:center;
@@ -14,8 +15,10 @@ body {
 
 fieldset {
     width:40%;
-    border:1px solid #000;
+    border:1px solid #000000;
     border-radius:7px;
+    background-color: #fadff4;
+    box-shadow: 10px 10px 15px 5px #8b8787;
 }
 
 legend {
@@ -57,7 +60,7 @@ input {
 }
 
 a {
-    color:#328b5a;
+    color:#094926;
     transition-duration:.5s;
     line-height:1.55em;
 }

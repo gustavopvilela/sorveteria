@@ -11,19 +11,27 @@
 	<title>4everIced - Login</title>
 </head>
 <body>
-	<form action="#" method="get">
-		<label for="email">Email: </label>
-		<input type="email" name="email" placeholder="nome@email.com" id="email"><br>
-		
-		<label for="senha">Senha: </label>
-		<input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha"><br>
+	<div class="container">
+		<fieldset>
+			<legend>Insira suas informações para a deleção!</legend>
 
-		<input type="submit" value="Logar!" name="logar">
-	</form>
+			<form action="#" method="get">
+				<label for="email">Email: </label>
+				<input type="email" name="email" placeholder="nome@email.com" id="email"><br>
+				
+				<label for="senha">Senha: </label>
+				<input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha"><br>
 
-	<a href="cadastro.php">Não tem uma conta? Cadastre-se!</a><br>
-	<a href="atualizar.php">Atualize seu cadastro!</a><br>
-	<a href="deletar.php">Não está satisfeito? Delete sua conta!</a>
+				<input type="submit" value="Entrar!" name="logar">
+			</form>
+
+			<hr>
+
+			<a href="cadastro.php">Não tem uma conta? Cadastre-se!</a><br>
+			<a href="atualizar.php">Atualize seu cadastro!</a><br>
+			<a href="deletar.php">Não está satisfeito? Delete sua conta!</a>
+		</fieldset>
+    </div>
 
 	<?php
 		require_once "../pedido/carrinho/conection.php";
@@ -54,7 +62,7 @@
 				"<script type='text/javascript'>
 					alert('Usuário/senha não cadastrados!');
 
-					location.href='../index/index.html';
+					location.href='login.php';
 				</script>";
 			}
 		}

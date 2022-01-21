@@ -11,19 +11,27 @@
 	<title>4everIced - Deletar conta</title>
 </head>
 <body>
-	<form action="#" method="get">
-		<label for="email">Digite o email da conta que quer excluir: </label>
-		<input type="email" name="email" placeholder="nome@email.com" id="email"><br>
+    <div class="container">
+		<fieldset>
+			<legend>Insira suas informações para a deleção!</legend>	
 
-        <label for="senha">Digite a senha para confirmar a exclusão: </label>
-		<input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha"><br>
+            <form action="#" method="get">
+                <label for="email">Digite o email da conta que quer excluir: </label>
+                <input type="email" name="email" placeholder="nome@email.com" id="email"><br>
 
-		<input type="submit" value="Excluir!" name="excluir">
-	</form>
+                <label for="senha">Digite a senha para confirmar a exclusão: </label>
+                <input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha"><br>
 
-	<a href="login.php">Já tem uma conta? Faça o login!</a><br>
-	<a href="cadastro.php">Não tem uma conta? Cadastre-se!</a><br>
-	<a href="atualizar.php">Atualize seu cadastro!</a>
+                <input type="submit" value="Excluir!" name="excluir">
+            </form>
+
+            <hr>
+
+            <a href="login.php">Já tem uma conta? Faça o login!</a><br>
+            <a href="cadastro.php">Não tem uma conta? Cadastre-se!</a><br>
+            <a href="atualizar.php">Atualize seu cadastro!</a>
+        </fieldset>
+    </div>
 
 	<?php
 		require_once "../pedido/carrinho/conection.php";
