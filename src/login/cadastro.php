@@ -6,35 +6,47 @@
 
 	<link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
 
-	<title>4everIced - Login</title>
+	<link rel="stylesheet" href="estilo-login.css">
+
+	<title>4everIced - Cadastro</title>
 </head>
 <body>
-	<form action="#" method="get">
-		<label for="nome">Nome: </label>
-		<input type="text" name="nome" placeholder="Ex.: João da Silva" id="nome"><br>
-		
-		<label for="email">Email: </label>
-		<input type="email" name="email" placeholder="nome@email.com" id="email"><br>
-		
-		<label for="senha">Senha: </label>
-		<input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha"><br>
-		
-		<label for="rua">Rua: </label>
-		<input type="text" name="rua" placeholder="Rua das Flores, 101" id="rua"><br>
-		
-		<label for="bairro">Bairro: </label>
-		<input type="text" name="bairro" placeholder="Bairro Alfa" id="bairro"><br>
-		
-		<label for="telefone">Telefone: </label>
-		<input type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" id="telefone"><br>
+	<div class="container">
+		<fieldset>
+			<legend>Insira suas informações para o cadastro!</legend>
+			
+			<form action="#" method="get">
+				<label for="nome">Nome: </label>
+				<input type="text" name="nome" placeholder="Ex.: João da Silva" id="nome" class="input"><br>
+				
+				<label for="email">Email: </label>
+				<input type="email" name="email" placeholder="nome@email.com" id="email" class="input"><br>
+				
+				<label for="senha">Senha: </label>
+				<input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha" class="input"><br>
+				
+				<label for="rua">Rua: </label>
+				<input type="text" name="rua" placeholder="Rua das Flores, 101" id="rua" class="input"><br>
+				
+				<label for="bairro">Bairro: </label>
+				<input type="text" name="bairro" placeholder="Bairro Alfa" id="bairro" class="input"><br>
+				
+				<label for="telefone">Telefone: </label>
+				<input type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" id="telefone" class="input"><br>
 
-		<input type="submit" value="Cadastrar!" name="cadastrar">
-	</form>
+				<input type="submit" value="Cadastrar!" name="cadastrar">
+			</form>
 
-	<a href="login.php">Já tem uma conta? Faça o login!</a><br>
-	<a href="atualizar.php">Atualize seu cadastro!</a><br>
-	<a href="deletar.php">Não está satisfeito? Delete sua conta!</a>
+			<hr>
 
+			<div class="links">
+				<a href="login.php">Já tem uma conta? Faça o login!</a><br>
+				<a href="atualizar.php">Atualize seu cadastro!</a><br>
+				<a href="deletar.php">Não está satisfeito? Delete sua conta!</a>
+			</div>
+			
+		</fieldset>
+	</div>
 	<?php
 		require_once "../pedido/carrinho/conection.php";
 

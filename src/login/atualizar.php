@@ -6,39 +6,49 @@
 
 	<link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
 
-	<title>4everIced - Login</title>
+    <link rel="stylesheet" href="estilo-login.css">
+
+	<title>4everIced - Atualizar conta</title>
 </head>
 <body>
-	<form action="#" method="get">
-        <label for="email">Digite o email atual para a atualizar: </label>
-		<input type="email" name="email-cadastro" placeholder="nome@email.com" id="email"><br>
-    
-        <hr>
+    <div class="container">
+		<fieldset>
+			<legend>Insira suas informações para a atualização!</legend>	
 
-		<label for="nome">Novo nome: </label>
-		<input type="text" name="nome" placeholder="Ex.: João da Silva" id="nome"><br>
-		
-		<label for="email">Novo email: </label>
-		<input type="email" name="email" placeholder="nome@email.com" id="email"><br>
-		
-		<label for="senha">Nova senha: </label>
-		<input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha"><br>
-		
-		<label for="rua">Nova rua: </label>
-		<input type="text" name="rua" placeholder="Rua das Flores, 101" id="rua"><br>
-		
-		<label for="bairro">Novo bairro: </label>
-		<input type="text" name="bairro" placeholder="Bairro Alfa" id="bairro"><br>
-		
-		<label for="telefone">Novo telefone: </label>
-		<input type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" id="telefone"><br>
+            <form action="#" method="get">
+                <label for="email">Digite o email atual para a atualizar: </label>
+                <input type="email" name="email-cadastro" placeholder="nome@email.com" id="email"><br>
+            
+                <hr>
 
-		<input type="submit" value="Atualizar dados!" name="atualizar">
-	</form>
+                <label for="nome">Novo nome: </label>
+                <input type="text" name="nome" placeholder="Ex.: João da Silva" id="nome"><br>
+                
+                <label for="email">Novo email: </label>
+                <input type="email" name="email" placeholder="nome@email.com" id="email"><br>
+                
+                <label for="senha">Nova senha: </label>
+                <input type="password" name="senha" placeholder="Sua senha vai aqui!" id="senha"><br>
+                
+                <label for="rua">Nova rua: </label>
+                <input type="text" name="rua" placeholder="Rua das Flores, 101" id="rua"><br>
+                
+                <label for="bairro">Novo bairro: </label>
+                <input type="text" name="bairro" placeholder="Bairro Alfa" id="bairro"><br>
+                
+                <label for="telefone">Novo telefone: </label>
+                <input type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" id="telefone"><br>
 
-	<a href="login.php">Já tem uma conta? Faça o login!</a><br>
-	<a href="cadastro.php">Não tem uma conta? Faça seu cadastro!</a><br>
-	<a href="deletar.php">Não está satisfeito? Delete sua conta!</a>
+                <input type="submit" value="Atualizar dados!" name="atualizar">
+            </form>
+
+            <hr>
+
+            <a href="login.php">Já tem uma conta? Faça o login!</a><br>
+            <a href="cadastro.php">Não tem uma conta? Faça seu cadastro!</a><br>
+            <a href="deletar.php">Não está satisfeito? Delete sua conta!</a>
+        </fieldset>
+    </div>
 
 	<?php
 		require_once "../pedido/carrinho/conection.php";

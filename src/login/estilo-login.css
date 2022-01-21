@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@100;200;300;400;500;600;700&display=swap);
+
+body {
+    min-height:95vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container {
+    width:100%;
+    height:100%;
+}
+
+fieldset {
+    width:40%;
+    border:1px solid #000;
+    border-radius:7px;
+}
+
+legend {
+    font-family:serif;
+    font-size:1.15em;
+    font-weight:400;
+    text-decoration:underline;
+    padding:0 10px;
+}
+
+label {
+    font-weight:600;
+    padding:0 4px;
+}
+
+legend,label,a,input[type=text],input[type=password],input[type=email] {
+    font-family:'Montagu Slab', serif;
+}
+
+input[type=text],input[type=password],input[type=email] {
+    margin-top:4px;
+    transition-duration:.5s;
+    padding:4px;
+}
+
+input[type=text]:focus,input[type=password]:focus,input[type=email]:focus {
+    font-size:1em;
+    padding:6px;
+}
+
+input {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:5px;
+    border:1px solid #000;
+    width:60%;
+    margin:0 0 0 10px;
+}
+
+a {
+    color:#328b5a;
+    transition-duration:.5s;
+    line-height:1.55em;
+}
+
+a:hover {
+    background-color:#3cb371;
+    color:#faebd7;
+    font-size:1.2em;
+    text-decoration:none;
+    border-radius:5px;
+    padding:3px 5px;
+}
+
+input[type=submit] {
+    background-color:#3cb371;
+    border:none;
+    font-family:'Montagu Slab', serif;
+    transition-duration:.5s;
+    font-size:1em;
+    padding:3px 0;
+}
+
+input[type=submit]:hover {
+    font-size:1.2em;
+    background-color:#328b5a;
+    width:65%;
+    padding:6px 0;
+}

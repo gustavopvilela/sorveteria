@@ -6,7 +6,9 @@
 
 	<link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
 
-	<title>4everIced - Login</title>
+    <link rel="stylesheet" href="estilo-login.css">
+
+	<title>4everIced - Deletar conta</title>
 </head>
 <body>
 	<form action="#" method="get">

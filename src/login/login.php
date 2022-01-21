@@ -6,6 +6,8 @@
 
 	<link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
 
+	<link rel="stylesheet" href="estilo-login.css">
+
 	<title>4everIced - Login</title>
 </head>
 <body>
